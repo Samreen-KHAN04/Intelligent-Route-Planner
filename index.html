@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Intelligent Route Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet/dist/leaflet.css"
+    />
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <h1>🚗 Intelligent Route Planner</h1>
+
+        <label>Source</label>
+        <input
+            type="text"
+            id="src"
+            value="N0_0"
+        >
+
+        <label>Destination</label>
+        <input
+            type="text"
+            id="dst"
+            value="N4_4"
+        >
+
+        <label>Objective</label>
+
+        <select id="objective">
+
+            <option value="time">
+                Time
+            </option>
+
+            <option value="distance">
+                Distance
+            </option>
+
+            <option value="money">
+                Money
+            </option>
+
+            <option value="eco">
+                Eco
+            </option>
+
+            <option value="weighted">
+                Weighted
+            </option>
+
+        </select>
+
+        <hr>
+
+        <h3>Traffic Simulation</h3>
+
+        <input
+            id="traffic_u"
+            placeholder="From Node (N2_2)"
+        >
+
+        <input
+            id="traffic_v"
+            placeholder="To Node (N2_3)"
+        >
+
+        <hr>
+
+        <h3>Road Closure</h3>
+
+        <input
+            id="close_u"
+            placeholder="From Node (N2_2)"
+        >
+
+        <input
+            id="close_v"
+            placeholder="To Node (N2_3)"
+        >
+
+        <button onclick="findRoute()">
+            Find Route
+        </button>
+
+        <button onclick="loadAlternatives()">
+            Show Alternatives
+        </button>
+
+        <div id="result"></div>
+
+        <div id="alternatives"></div>
+
+    </div>
+
+    <div id="map"></div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
